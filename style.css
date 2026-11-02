@@ -1,0 +1,212 @@
+/* Руководство по стилю для ООО "Обувь" - УПРОЩЕННЫЙ */
+
+/* Основные настройки */
+QWidget {
+    font-family: "Times New Roman";
+    font-size: 11pt;
+    background-color: #FFFFFF;
+}
+
+/* Заголовки окон */
+QMainWindow, QDialog, QWidget {
+    background-color: #FFFFFF;
+}
+
+/* Заголовки */
+QLabel {
+    color: #000000;
+}
+
+QLabel#title {
+    font-size: 22pt;
+    font-weight: bold;
+    color: #000000;
+    margin: 8px 0;
+}
+
+/* Кнопки */
+QPushButton {
+    background-color: #00FA9A;
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-weight: bold;
+    font-size: 10pt;
+    min-height: 30px;
+}
+
+QPushButton:hover {
+    background-color: #7FFF00;
+}
+
+QPushButton:pressed {
+    background-color: #2E8B57;
+    color: #FFFFFF;
+}
+
+QPushButton:checked {
+    background-color: #2E8B57;
+    color: #FFFFFF;
+}
+
+/* Поля ввода */
+QLineEdit, QTextEdit, QComboBox, QDateEdit {
+    background-color: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    padding: 4px 6px;
+    font-size: 10pt;
+}
+
+QLineEdit:focus, QTextEdit:focus, QComboBox:focus {
+    border: 2px solid #00FA9A;
+}
+
+/* Плитки товаров */
+QFrame#product_card {
+    background-color: #FFFFFF;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 3px;
+}
+
+QFrame#product_card:hover {
+    border-color: #00FA9A;
+    background-color: #F8FFF8;
+    border-width: 2px;
+}
+
+/* Для товаров со скидкой > 15% */
+QFrame#product_card[discount_high="true"] {
+    background-color: #2E8B57;
+    border-color: #228B22;
+}
+
+QFrame#product_card[discount_high="true"]:hover {
+    background-color: #3CB371;
+    border-color: #7FFF00;
+}
+
+/* Для товаров со скидкой > 15% - белый текст */
+QFrame#product_card[discount_high="true"] QLabel {
+    color: #FFFFFF;
+}
+
+/* Для товаров отсутствующих на складе */
+QFrame#product_card[out_of_stock="true"] {
+    background-color: #E0F7FA;
+    border-color: #00BCD4;
+}
+
+QFrame#product_card[out_of_stock="true"]:hover {
+    background-color: #B2EBF2;
+    border-color: #0097A7;
+}
+
+/* Область прокрутки */
+QScrollArea {
+    border: none;
+    background-color: #FFFFFF;
+}
+
+QScrollBar:vertical {
+    border: 1px solid #000000;
+    background: #FFFFFF;
+    width: 12px;
+    border-radius: 4px;
+}
+
+QScrollBar::handle:vertical {
+    background: #7FFF00;
+    min-height: 25px;
+    border-radius: 5px;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    border: 1px solid #000000;
+    background: #00FA9A;
+    height: 15px;
+    border-radius: 4px;
+}
+
+QScrollBar:horizontal {
+    border: none;
+    background: transparent;
+    height: 0px;
+}
+
+/* Сообщения */
+QMessageBox {
+    background-color: #FFFFFF;
+}
+
+QMessageBox QLabel {
+    font-family: "Times New Roman";
+    font-size: 11pt;
+}
+
+/* Выпадающие списки */
+QComboBox::drop-down {
+    border: none;
+    background: #00FA9A;
+    width: 22px;
+    border-left: 1px solid #000000;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+QComboBox::down-arrow {
+    width: 10px;
+    height: 10px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 5px solid #000000;
+}
+
+QComboBox QAbstractItemView {
+    border: 1px solid #000000;
+    background-color: #FFFFFF;
+    font-size: 10pt;
+}
+
+QComboBox QAbstractItemView::item:selected {
+    background-color: #00FA9A;
+    color: #000000;
+}
+
+/* Цены в плитке */
+QLabel[price="true"] {
+    font-weight: bold;
+    font-size: 10pt;
+}
+
+/* Статус количества */
+QLabel[quantity_low="true"] {
+    color: #FFA500;
+    font-weight: bold;
+    font-size: 10pt;
+}
+
+QLabel[quantity_zero="true"] {
+    color: #FF0000;
+    font-weight: bold;
+    font-size: 10pt;
+}
+
+/* Скидка в плитке */
+QLabel[discount_label="true"] {
+    color: #FFFFFF;
+    background-color: #2E8B57;
+    padding: 2px 8px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 9pt;
+}
+
+QLabel[discount_small="true"] {
+    color: #228B22;
+    font-weight: bold;
+    font-size: 10pt;
+}
