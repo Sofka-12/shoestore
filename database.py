@@ -2,6 +2,7 @@ import psycopg2
 import sys
 import os
 from psycopg2 import OperationalError
+import configparser
 
 # Устанавливаем кодировку UTF-8 для Windows
 if sys.platform == "win32":
@@ -23,7 +24,7 @@ class Database:
                 host="localhost",
                 database="shoestore",
                 user="postgres",
-                password="200703"  # Измените на ваш пароль
+                password="200703" 
             )
             self.cursor = self.connection.cursor()
             print("Подключение к базе данных успешно!")
