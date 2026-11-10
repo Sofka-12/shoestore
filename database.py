@@ -1,8 +1,9 @@
 import psycopg2
 import sys
 import os
-from psycopg2 import OperationalError
 import configparser
+from psycopg2 import OperationalError
+
 
 # Устанавливаем кодировку UTF-8 для Windows
 if sys.platform == "win32":
@@ -20,11 +21,16 @@ class Database:
     
     def _init_connection(self):
         try:
+            config = configparser.ConfigParser()
+            config.read("config.ini", encoding="utf-8")
+            db = config["database"]
+
             self.connection = psycopg2.connect(
-                host="localhost",
-                database="shoestore",
-                user="postgres",
-                password="200703" 
+                host=db["host"],
+                port=db["port"],
+                dbname=db["name"],
+                user=db["user"],
+                password=db["password"]
             )
             self.cursor = self.connection.cursor()
             print("Подключение к базе данных успешно!")
